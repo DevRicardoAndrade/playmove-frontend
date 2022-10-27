@@ -1,0 +1,17 @@
+table {
+    display: fixed ;
+    justify-content: space-between;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: center;
+  }
+  
+
+  tr:hover{
+    cursor: pointer;
+    background-color: rgba(0,0,0,0.15);
+  }

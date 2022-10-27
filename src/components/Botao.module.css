@@ -1,0 +1,103 @@
+.btn{
+    width: 20%;
+    padding: 0.25%;
+    text-align: center;
+    border-radius: 0.25rem;
+    border: 1px solid orange;
+    color: orange;
+    transition: .3s;
+}
+
+.btn:hover{
+    cursor: pointer;
+    background-color: orange;
+    color: white;
+}
+
+.btn:active{
+    background-color: rgba(255,165,0,0.6);
+    border: 2px solid rgb(146, 95, 0);
+}
+.full{
+    width: 100%;
+}
+
+
+.red{
+    border: 1px solid red;
+    color: red;
+}
+.red:hover{
+    background-color: red;
+}
+.red:active{
+    background-color: rgba(255, 0, 0, 0.6);
+    border: 2px solid rgb(124, 0, 0);
+}
+.red-full{
+    width: 100%;
+    border: 1px solid red;
+    color: red;
+}
+.red-full:hover{
+    background-color: red;
+}
+.red-full:active{
+    background-color: rgba(255, 0, 0, 0.6);
+    border: 2px solid rgb(124, 0, 0);
+}
+
+
+.blue{ 
+    border: 1px solid blue;
+    color: blue;
+}
+
+.blue:hover{
+    background-color: blue;
+}
+.blue:active{
+    background-color: rgba(0, 0, 255, 0.6);
+    border: 2px solid rgb(0, 0, 124);
+}
+
+.blue-full{ 
+    width: 100%;
+    border: 1px solid blue;
+    color: blue;
+}
+
+.blue-full:hover{
+    background-color: blue;
+}
+.blue-full:active{
+    background-color: rgba(0, 0, 255, 0.6);
+    border: 2px solid rgb(0, 0, 124);
+}
+
+.yellow{
+    border: 1px solid yellow;
+    color: yellow;
+}
+
+.yellow:hover{
+    background-color: yellow;
+}
+.yellow:active{
+    background-color: rgba(255, 255, 0, 0.6);
+    border: 2px solid rgb(124, 124, 0);
+}
+
+.yellow-full{
+    width: 100%;
+    border: 1px solid yellow;
+    color: yellow;
+}
+
+.yellow-full:hover{
+    background-color: yellow;
+}
+.yellow-full:active{
+    background-color: rgba(255, 255, 0, 0.6);
+    border: 2px solid rgb(124, 124, 0);
+}
