@@ -23,11 +23,13 @@ function FornecedorPage(){
     const [isModalVisible, setIsModalVisible] = useState(false);
 
     //Declarando usestate para capturar fornecedores
-    const [dataEdit, setDataEdit] = useState([]);
+    const [dataEdit, setDataEdit] = useState();
     function getFornecedor(){
+        console.log(id)
         axios.get('https://localhost:7236/Fornecedores/' +id)
         .then(response => {
-            console.log(response.data);
+            setDataEdit(response.data);
+            setIsModalVisible(true);
         })
         .catch(err => console.log(err));
     };
@@ -78,8 +80,8 @@ function FornecedorPage(){
         ) : null}
         <Container customClass="column">
             <h1 className={styles.titulo}>Fornecedores</h1>
-            <Botao tipo="button" texto="Adicionar" click={() =>   {setIsModalVisible(true); getFornecedor()}} />
-            <DataGrid datatable={dataTable} column={column} excluir={true} editar={true} onClickEditar={() => setIsModalVisible(true)} onCliExcluir={deleteFornecedor} setId={setId}/>
+            <Botao tipo="button" texto="Adicionar" click={() =>   {setIsModalVisible(true)}} />
+            <DataGrid datatable={dataTable} column={column} excluir={true} editar={true} onClickEditar={() => {getFornecedor(); }} onCliExcluir={deleteFornecedor} setId={setId}/>
         </Container>
         
         </>        

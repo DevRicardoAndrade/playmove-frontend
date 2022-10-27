@@ -98,17 +98,8 @@ import axios from 'axios';
         else
             return numero; 
     }
-    console.log(dataEdit);
-    dataEdit.map((item, index) =>{
-        setId(item.id);
-        setNome(item.nome);
-        setCnpj(item.cnpj);
-        setCpf(item.cpf);
-        setNascimento(item.nascimento);
-        setEmpresa(item.empresaId);
-        setTelefones(item.telefones);
-        setRg(item.rg);
-    })
+
+    console.log(dataEdit)
     //declarando usestates para alteracao de valores 
     const [telefoneRemove, setTelefoneRemove] = useState(0);
     const [id, setId] = useState(dataEdit.id || 0);
