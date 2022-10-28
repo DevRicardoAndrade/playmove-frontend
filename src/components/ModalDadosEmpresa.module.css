@@ -15,8 +15,8 @@
     align-items: center;
     width: 70%;
     min-width: 270px;
-    height: 80%;
-    min-height: 550px;
+    height: 40%;
+    min-height: 450px;
     background-color: rgba(255,255,255,0.7);
     border: 1px solid gray;
     border-radius: 0.35rem;
@@ -76,48 +76,3 @@ form{
 .form_group label{
     width: 100%;
 }
-.select{
-    border-radius: 0.35rem;
-    outline-color: orange;
-    padding: 1%;
-    width: 100%;
-    transition: .3s;
-}
-select[multiple]{
-    margin-top: 1%;
-    border-radius: 0.35rem;
-    outline-color: orange;
-    width: 100%;
-    transition: .3s;
-}
-.select option{
-    transition: .3s;
-    color: orange;
-    background-color: rgba(0, 0, 0, 0.8);
-}
-.btn{
-    color: rgba(0,0,255,0.7);
-    text-decoration:underline;
-}
-.btn:hover{
-    cursor: pointer;
-    color: rgba(0,0,255,1);
-}
-
-.btn_red{
-    color: rgba(255,0,0,0.7);
-    text-decoration:underline;
-}
-.btn_red:hover{
-    cursor: pointer;
-    color: rgba(255,0,0,1);
-}
-@media screen and (max-width: 900) {
-    form{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        flex-wrap: wrap;
-    }
-   }

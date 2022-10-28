@@ -34,7 +34,7 @@ const TrItem = ({item, column}) =>{
     return(<tr id={item['id']} onClick={(e) => SetId(e.currentTarget.id)}>
         {column.map((columnItem, index) =>{
             
-             return(<td key={index}>{item[`${columnItem.value}`]}</td>)
+             return(<td id={columnItem.value} key={index}>{item[`${columnItem.value}`]}</td>)
         })}
         {(_editar) &&
         <td>

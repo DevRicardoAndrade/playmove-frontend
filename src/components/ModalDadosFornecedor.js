@@ -3,7 +3,7 @@ import Botao from "./Botao";
 import styles from './ModalDadosFornecedor.module.css'
 import axios from 'axios';
   
-  function ModalDadosFornecedor ({ onClose = () => {} , dataEdit }) {
+  function ModalDadosFornecedor ({ onClose = () => {} , dataEdit = []}) {
     
     function getTelefones(){
         axios('https://localhost:7236/Fornecedor/Telefone/'+id).then(response => {
@@ -35,10 +35,25 @@ import axios from 'axios';
             console.log(error);
         })
     }
-
+    const [empresaSelecao, setEmpresaSelecao] = useState();
+    function getEmpresaSelecao(){
+        axios.get('https://localhost:7236/Empresas/'+empresa)
+        .then(response => setEmpresaSelecao(response.data))
+        .catch(error => console.log(error));
+    }
     //Funcao para salvar os dados
     function salvar(e) {
         e.preventDefault();
+       getEmpresaSelecao();
+        if(empresaSelecao.uf === 'SC'){
+            const dataNascimento = new Date(nascimento)
+            const now = new Date();
+            console.log(now.getFullYear() - dataNascimento.getFullYear())
+            if((now.getFullYear() - dataNascimento.getFullYear()) <18 ){
+                alert('Voce é de menor');
+                return;
+            }
+        } 
             if(id>0){
                 axios.put('https://localhost:7236/Fornecedores/'+id, 
             {
@@ -99,7 +114,7 @@ import axios from 'axios';
             return numero; 
     }
 
-    console.log(dataEdit)
+
     //declarando usestates para alteracao de valores 
     const [telefoneRemove, setTelefoneRemove] = useState(0);
     const [id, setId] = useState(dataEdit.id || 0);

@@ -64,15 +64,52 @@ function FornecedorPage(){
     const column = [
         {heading:'Id', value:'id'},
         {heading:'Nome', value:'nome'},
+        {heading:'CNPJ', value:'cnpj'},
         {heading: 'CPF', value:'cpf'},
         {heading:'Data Cadastro', value:'data_Hora_Cadatro'},
         {heading:'Empresa', value:'empresaId'}
     ];
+    const [dataFilterNome, setDataFilterNome] = useState();
+    const [dataFilterCpf, setDataFilterCpf] = useState();
+    const [dataFilterCnpj, setDataFilterCnpj] = useState();
+    const [dataFilterData, setDataFilterData] = useState();
 
-
+    function Filter(){
+        if(dataFilterNome)
+                return dataTable.filter(item => item.nome.startsWith(dataFilterNome));
+            else if(dataFilterCnpj)
+                return dataTable.filter(item => item.cnpj.startsWith(dataFilterCnpj));
+            else if(dataFilterCpf)
+                return dataTable.filter(item => item.cpf.startsWith(dataFilterCpf));
+            else if(dataFilterData)
+                return dataTable.filter(item => item.data_Hora_Cadastro === dataFilterData);
+            else 
+                return dataTable;        
+    }
+    
     return(
         <>
         <p>ID Selecionado: {id}</p>
+        <br/>
+        <p>Filtros</p>
+        <div className={styles.form_group}>
+            <label>Nome</label>
+            <input  className={styles.text} onChange={
+                (e) => setDataFilterNome(e.target.value)
+            }/>
+            <label>CNPJ</label>
+            <input  className={styles.text} onChange={
+                (e) => setDataFilterCnpj(e.target.value)
+            }/>
+            <label>CPF</label>
+            <input className={styles.text} onChange={
+                (e) => setDataFilterCpf(e.target.value)
+            }/>
+            <label>Data</label>
+            <input  className={styles.text}onChange={
+                (e) => setDataFilterData(e.target.value)
+            }/>
+        </div>
          {
          //valida se o modal é para aparecer ou nao <DataGrid datatable={dataTable} column={column}/>
          isModalVisible ? (
@@ -81,7 +118,7 @@ function FornecedorPage(){
         <Container customClass="column">
             <h1 className={styles.titulo}>Fornecedores</h1>
             <Botao tipo="button" texto="Adicionar" click={() =>   {setIsModalVisible(true)}} />
-            <DataGrid datatable={dataTable} column={column} excluir={true} editar={true} onClickEditar={() => {getFornecedor(); }} onCliExcluir={deleteFornecedor} setId={setId}/>
+            <DataGrid  datatable={Filter()} column={column} excluir={true} editar={true} onClickEditar={() => {getFornecedor(); }} onCliExcluir={deleteFornecedor} setId={setId}/>
         </Container>
         
         </>        

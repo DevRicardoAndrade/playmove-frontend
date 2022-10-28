@@ -1,3 +1,20 @@
 .titulo{
     text-align:center;
+}.form_group{
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 95%;
+}
+.text{
+    border: 1px solid gray;
+    border-radius: 0.35rem;
+    outline-width:1px ;
+    outline-color: orange;
+    padding:0.25rem;
+    width: 30%;
+    min-width: 150px;
+    min-height: 20px;
 }
