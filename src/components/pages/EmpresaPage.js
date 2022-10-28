@@ -63,8 +63,8 @@ function EmpresaPage(){
     const column = [
         {heading:'Id', value:'id'},
         {heading:'Nome', value:'nome_Fatansia'},
-        {heading: 'CPF', value:'cnpj'},
-        {heading:'Data Cadastro', value:'uf'},
+        {heading: 'CNPJ', value:'cnpj'},
+        {heading:'UF', value:'uf'},
     ];
 
 
